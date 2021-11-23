@@ -26,8 +26,8 @@ asignacion_err  ({literal}{ignore}*"="{ignore}*({operando}|{operacion}+){ignore}
 lectura         ("R"{ignore}*\({ignore}*{variable}{ignore}*\){ignore}*)
 lectura_err     ("R"{ignore}*\({ignore}*{literal}{ignore}*\){ignore}*)
 escritura       ("W"{ignore}*\({ignore}*({operando}|{operacion}){ignore}*\){ignore}*)
-sentencia       (({asignacion}|{lectura}|{escritura})";"{ignore}*)
-sentencia_err   (({asignacion}|{lectura}|{escritura})+{linea}?(\})?{ignore}*)
+sentencia       (({asignacion}|{lectura}|{operacion}|{escritura})";"{ignore}*)
+sentencia_err   (({asignacion}|{lectura}|{operacion}|{escritura})+{linea}?(\})?{ignore}*)
 main            ({linea}*"M"{linea}*"{"{linea}*({sentencia}{linea}*)*"}"{linea}*)
 main_err        ({main}{linea}*((({sentencia}|{sentencia_err}){linea}*)*)+.+)
 %%
